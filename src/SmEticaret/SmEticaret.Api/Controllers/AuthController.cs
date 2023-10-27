@@ -32,6 +32,7 @@ namespace SmEticaret.Api.Controllers
             _tokenService = tokenService;
         }
 
+        [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginModel loginModel)
         {
             if (!ModelState.IsValid)
@@ -62,6 +63,34 @@ namespace SmEticaret.Api.Controllers
             {
                 Token = tokenResult.Data,
             });
+        }
+
+        public async Task<IActionResult> Register([FromBody]RegisterModel registerModel)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var user = await _dbContext.Users
+                .SingleOrDefaultAsync(x => x.Email == registerModel.Email);
+
+            if(user is not null)
+            {
+                return BadRequest("Bu email adresi kullanılmaktadır." );
+            }
+            var newUser = new UserEntity
+            {
+                Name = registerModel.Name,
+                LastName = registerModel.LastName,
+                Email = registerModel.Email,
+                PasswordHash = HashString(registerModel.Password),
+                RoleId = registerModel.RoleId,
+            };
+
+            _dbContext.Users.Add(newUser);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok();
         }
         private string HashString(string input)
         {
