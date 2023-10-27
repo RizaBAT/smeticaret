@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using SmEticaret.Api.Services.TokenServices;
 using SmEticaret.Data;
 
 namespace SmEticaret.Api
@@ -11,7 +12,7 @@ namespace SmEticaret.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

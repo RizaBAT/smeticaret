@@ -1,5 +1,4 @@
-﻿using Microsoft.Exchange.WebServices.Data;
-
+﻿
 namespace SmEticaret.Shared.ServiceResult
 {
     public class ServiceResult : IServiceResult
