@@ -17,6 +17,7 @@ namespace SmEticaret.Data.Entities
 
         [Required, Range(1, 5)]
         public byte StarCount { get; set; }
+
         [Required]
         public DateTime CreateAd { get; set; }
     }

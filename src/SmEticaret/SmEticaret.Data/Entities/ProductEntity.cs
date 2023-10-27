@@ -15,6 +15,7 @@ namespace SmEticaret.Data.Entities
 
         [Required, Range(0, double.MaxValue), DataType("Money")]
         public decimal Price { get; set; }
+
         [Required, Range(0, int.MaxValue)]
         public int Stock { get; set; }
 
@@ -28,6 +29,10 @@ namespace SmEticaret.Data.Entities
         [Required]
         public int PasswordHash { get; set; }
 
-      
+        [ForeignKey(nameof(CategoryId))]
+        public CategoryEntity Category { get; set; }
+
+        [ForeignKey(nameof(SellerId))]
+        public UserEntity Seller {  get; set; }
     }
 }
