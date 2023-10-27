@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmEticaret.Mvc", "SmEticaret.Mvc\SmEticaret.Mvc.csproj", "{2978608D-2164-4B63-B8D6-1AB34FA7250D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmEticaret.Mvc", "SmEticaret.Mvc\SmEticaret.Mvc.csproj", "{2978608D-2164-4B63-B8D6-1AB34FA7250D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmEticaret.Data", "SmEticaret.Data\SmEticaret.Data.csproj", "{3A7374BC-FF1E-41BC-98DF-FA22D366CB6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmEticaret.Data", "SmEticaret.Data\SmEticaret.Data.csproj", "{3A7374BC-FF1E-41BC-98DF-FA22D366CB6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmEticaret.Api", "SmEticaret.Api\SmEticaret.Api.csproj", "{C0E7A7EF-039F-4444-BB47-7B8E7290158B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3A7374BC-FF1E-41BC-98DF-FA22D366CB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A7374BC-FF1E-41BC-98DF-FA22D366CB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A7374BC-FF1E-41BC-98DF-FA22D366CB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E7A7EF-039F-4444-BB47-7B8E7290158B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E7A7EF-039F-4444-BB47-7B8E7290158B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E7A7EF-039F-4444-BB47-7B8E7290158B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E7A7EF-039F-4444-BB47-7B8E7290158B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

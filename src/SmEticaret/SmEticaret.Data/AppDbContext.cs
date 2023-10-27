@@ -10,7 +10,7 @@ namespace SmEticaret.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { } 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<UserEntity> Users { get; set; }
@@ -18,8 +18,20 @@ namespace SmEticaret.Data
         public DbSet<CartItemEntity> CartItems { get; set; }
         public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<OrderEntity> Order { get; set; }
-        public DbSet<OrderItemEntity> OrderItems { get;set; }
+        public DbSet<OrderItemEntity> OrderItems { get; set; }
         public DbSet<ProductEntity> Products { get; set; }
         public DbSet<ProductCommentEntity> ProductComments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var roles = new RoleEntity[]
+            {
+                new RoleEntity { Id = 1, Name = "Seller"},
+                new RoleEntity { Id = 2, Name = "Buyer"}
+            };
+
+            modelBuilder.Entity<RoleEntity>().HasData(roles);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
